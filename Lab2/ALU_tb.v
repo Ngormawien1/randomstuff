@@ -28,6 +28,7 @@ module ALU_tb;
 	reg [2:0] alusel;
 	reg [3:0] aluin_a;
 	reg [3:0] aluin_b;
+	reg Cin;
 
 	// Outputs
 	wire nf;
@@ -35,7 +36,7 @@ module ALU_tb;
 	wire cf;
 	wire ovf;
 	wire Cout;
-	wire [3:0] y;
+	wire [15:0] y;
 
 	// Instantiate the Unit Under Test (UUT)
 	alu4 uut (
@@ -55,53 +56,128 @@ initial begin
 		alusel = 0;
 		aluin_a = 0;
 		aluin_b = 0;
+		Cin = 0;
 		
-alusel = 4'b000;
+alusel = 4'b0000;
           
-       aluin_a = 4'b100 ;
-       aluin_b = 4'b011 ;
-       # 50;		
-		 
-alusel = 4'b001;
+       aluin_a = 4'b0100 ;
+       aluin_b = 4'b0011 ;
+       Cin = 1'b1;
+       # 50;	
+       
+alusel = 4'b0001;
           
-       aluin_a = 4'b100 ;
-       aluin_b = 4'b011 ;
+       aluin_a = 4'b0100 ;
+       aluin_b = 4'b0011 ;
+       Cin = 1'b1;
        # 50;
    
-alusel = 4'b010;
+alusel = 4'b0010;
          
-       aluin_a = 4'b001 ;
-       aluin_b = 4'b011 ;
+       aluin_a = 4'b0001 ;
+       aluin_b = 4'b0011 ;
+       Cin = 1'b1;
+       # 50;
+          
+       
+       
+		 
+alusel = 4'b0011;
+          
+       aluin_a = 4'b0001 ;
+       aluin_b = 4'b0011 ;
+       Cin = 1'b1;
        # 50;
    
-alusel = 4'b011;
+alusel = 4'b0100;
+         
+       aluin_a = 4'b0001 ;
+       aluin_b = 4'b0011 ;
+       Cin = 1'b1;
+       # 50;
+   
+alusel = 4'b0101;
       
-        aluin_a = 4'b001 ;
-        aluin_b = 4'b011 ;
+        aluin_a = 4'b0001 ;
+        aluin_b = 4'b0011 ;
+        Cin = 1'b1;
        # 50;
    
-alusel = 4'b100;
+alusel = 4'b0110;
           
-       aluin_a = 4'b001 ;
-       aluin_b = 4'b011 ;
+       aluin_a = 4'b0110 ;
+       aluin_b = 4'b0011 ;
+       Cin = 1'b1;
        # 50;
    
-alusel = 4'b101;
+alusel = 4'b0111;
           
-       aluin_a = 4'b001 ;
-       aluin_b = 4'b011 ;
+       aluin_a = 4'b0010 ;
+       aluin_b = 4'b0011 ;
+       Cin = 1'b1;
        # 50;
    
- alusel = 4'b110;
+ alusel = 4'b1000;
            
-       aluin_a = 4'b110 ;
-       aluin_b = 4'b011 ;
+       aluin_a = 4'b0001 ;
+       aluin_b = 4'b0011 ;
+       Cin = 1'b1;
        # 50;
    
-alusel = 4'b111;
+alusel = 4'b1001;
      
-       aluin_a = 4'b001 ;
-       aluin_b = 4'b011 ;
+       aluin_a = 4'b0001 ;
+       aluin_b = 4'b0011 ;
+       Cin = 1'b1;
+       # 50;
+   
+   alusel = 4'b1010;
+         
+       aluin_a = 4'b0001 ;
+       aluin_b = 4'b0011 ;
+       Cin = 1'b1;
+       # 50;
+   
+alusel = 4'b1011;
+      
+        aluin_a = 4'b0001 ;
+        aluin_b = 4'b0011 ;
+        Cin = 1'b1;
+       # 50;
+   
+alusel = 4'b1100;
+          
+       aluin_a = 4'b0001 ;
+       aluin_b = 4'b0011 ;
+       Cin = 1'b1;
+       # 50;
+   
+alusel = 4'b1011;
+          
+       aluin_a = 4'b0001 ;
+       aluin_b = 4'b0011 ;
+       Cin = 1'b1;
+       # 50;
+   
+ alusel = 4'b1101;
+           
+       aluin_a = 4'b0110 ;
+       aluin_b = 4'b0011 ;
+       Cin = 1'b1;
+       # 50;
+   
+alusel = 4'b1110;
+     
+       aluin_a = 4'b0001 ;
+       aluin_b = 4'b0011 ;
+       Cin = 1'b1;
+       # 50;
+      
+alusel = 4'b1111;
+     
+       aluin_a = 4'b0001 ;
+       aluin_b = 4'b0011 ;
+       Cin = 1'b1;
        # 50;
    
     $finish;
