@@ -66,7 +66,7 @@ always @(*)
 			end 
 			
 		4'b0100: y = aluin_a >> aluin_b;// Pass the values of ALU inputs A
-		4'b0101: y = aluin_a <<< aluin_b;// Pass the values of ALU inputs A
+		4'b0101: y = aluin_a >>> aluin_b;// Pass the values of ALU inputs A
 //Right barrel rotate		
 		4'b0110:
 			begin
